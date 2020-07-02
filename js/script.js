@@ -40,7 +40,10 @@ document.querySelector('.btn-load').onclick = (e) => {
     })
         .then(response => response.text())
         .then(response => {
-            console.log('Sent');
+            console.log(response);
+            if (response == 1) {
+                succsessUploaded();
+            }
         })
 
 }
@@ -64,6 +67,19 @@ function inputCheck() {
     let chips = document.createElement('div');
     chips.classList.add('chips');
     let message = document.createTextNode("Заполните все поля!");
+    chips.appendChild(message);
+    let chiepsField = document.querySelector('.chieps-field');
+    chiepsField.appendChild(chips);
+
+    setTimeout(() => {
+        chips.remove();
+    }, 3000)
+}
+
+function succsessUploaded() {
+    let chips = document.createElement('div');
+    chips.classList.add('chips');
+    let message = document.createTextNode("Данные выгружены в Google Sheets!");
     chips.appendChild(message);
     let chiepsField = document.querySelector('.chieps-field');
     chiepsField.appendChild(chips);

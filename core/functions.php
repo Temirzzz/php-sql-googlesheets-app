@@ -41,18 +41,22 @@ function googleSheets ($conn) {
 
     // -------------------------------------------------------------------
 
+    mysqli_set_charset($conn,"utf8");
 
+    if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+    }
 
-
-
-
-
-
-
-
-
-
-
+    $sql = "SELECT name FROM `users` WHERE age >=18";
+    $result = mysqli_query($conn, $sql);
+    if ($result->num_rows > 0) {
+        $arr = array();
+        while($row = mysqli_fetch_row($result)) {
+            $arr[] = $row[0];
+        }
+        echo 1;
+    } 
+    json_encode($arr);
 
     // ----------------------------------------------------------------
 
@@ -66,11 +70,10 @@ function googleSheets ($conn) {
 
     $spreadsheetId = "1shzNjUC3EO4Fl0QcbAI813zHTvJ-A3zH0_YBIUJGago";
 
-    $range = "A1:E5";
+    $range = "A1:Z20";
     $values = [
-        //json_encode($a, JSON_FORCE_OBJECT), "\n\n"
-        //$a
-        ['Мистер робот', 'Jack', 'Sophy']
+        
+        $arr
     ];
 
     $body = new Google_Service_Sheets_ValueRange([
