@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.main-form {
+    margin: 150px auto;
+    padding: 20px 30px;
+    display: inline-block;
+    border-radius: 5px;    
+    background: #E0FFFF;
+    box-shadow: 1px 1px 1px #999;
+}
+
+input {
+	padding: 5px;
+	line-height: 1.5;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    font-size: 1rem;
+	letter-spacing: 1px;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	margin-top: 15px;
+}
+
+.btn {
+	margin: 30px auto;
+	padding: 5px 10px;
+	border-radius: 2px;
+    background: #87CEFA;
+    border: none;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.btn:active,
+.btn:focus {
+	outline: none;
+}
+
+/* ---------------- chips --------------- */
+
+.chieps-field {
+	position: absolute;	
+	min-width: 110px;
+}
+
+.chips {
+	padding: 5px 10px;
+	background: #87CEFA;
+	z-index: 9999;
+	position: relative;
+	margin: 10px 20px;
+	font-size: 18px;
+	line-height: 1.5;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	box-shadow: 1px 1px 1px #999;
+}
